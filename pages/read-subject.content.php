@@ -13,8 +13,8 @@ $row = $query->fetch();
 <div class="container my-5">
     <div class="row">
         <div class="col">
-            <h1><?php echo $row['title']; ?></h1>
-            <div><?php echo nl2br($row['content']); ?></div>
+            <h1><?php echo $row['subjectName']; ?></h1>
+            <div><?php echo nl2br($row['subjectContent']); ?></div>
         </div>
     </div>
 </div>

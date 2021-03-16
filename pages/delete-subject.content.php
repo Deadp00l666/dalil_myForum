@@ -11,9 +11,7 @@ $query->execute([
 <div class="container my-5">
     <div class="row">
         <div class="col text-center">
-
-            L'article a été effacé.
-
+            <p>Le sujet a été effacé.</p>
         </div>
     </div>
 </div>

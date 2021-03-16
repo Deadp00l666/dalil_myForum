@@ -7,10 +7,11 @@ if (isset($_POST['subjectForm'])) {
         /** @var PDO $database */
         $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
-        $query = $database->prepare('INSERT INTO `articles` (`title`, `content`) VALUES(:title, :content)');
+        $query = $database->prepare('INSERT INTO `subject` (`subjectId`, `subjectName`, `subjectContent`) VALUES(:id, :title, :content)');
         $res = $query->execute([
-            'title' => $_POST['articleFormTitle'],
-            'content' => $_POST['articleFormContent'],
+            'id' => $_POST['subjectId'],
+            'title' => $_POST['subjectFormTitle'],
+            'content' => $_POST['subjectFormContent'],
         ]);
     }
 

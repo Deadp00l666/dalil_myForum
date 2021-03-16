@@ -8,13 +8,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/?page=home">Accueil</a>
+                        <a class="nav-link" href="index.php/?page=home">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/?page=list-articles">Liste des articles</a>
+                        <a class="nav-link" href="index.php/?page=list-subject">Liste des sujets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/?page=update-subject">Admin</a>
+                        <a class="nav-link" href="index.php/?page=create-subject">Créer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php/?page=delete-subject">Supprimer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php/?page=update-subject">Update</a>
                     </li>
                 </ul>
             </div>
