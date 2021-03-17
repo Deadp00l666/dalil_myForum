@@ -26,7 +26,7 @@ $query->execute();
 
                     <tr>
                         <th scope="row"><?php echo $row['subjectId']; ?></th>
-                        <td><?php echo $row['subjectName']; ?></td>
+                        <td><a href="index.php/?page=read-subject&id=<?php echo $row['subjectId']; ?>"><?php echo $row['subjectName']; ?></a></td>
                         <td>
                             <a href="index.php/?page=delete-subject&id=<?php echo $row['subjectId']; ?>" class="btn btn-danger">Effacer</a>
                         </td>
@@ -40,3 +40,5 @@ $query->execute();
         </div>
     </div>
 </div>
+
+<?php require_once dirname(__FILE__) . '/includes/create-subject.content.php'; ?>

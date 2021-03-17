@@ -8,7 +8,6 @@ $query->execute([
 ]);
 
 $row = $query->fetch();
-var_dump($row);
 ?>
 
 <div class="container my-5">
