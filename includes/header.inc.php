@@ -19,9 +19,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php/?page=delete-subject">Supprimer</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php/?page=update-subject">Update</a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>

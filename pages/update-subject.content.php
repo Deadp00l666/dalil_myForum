@@ -9,14 +9,14 @@ if (isset($_POST['subjectForm'])) {
 
         $query = $database->prepare('UPDATE `subject` SET `subjectName` = :title, `subjectContent` = :content WHERE `subjectId` = :id');
         $res = $query->execute([
-            'id' => $_GET['id'],
+            'id' => $_GET['subjectId'],
             'title' => $_POST['subjectFormTitle'],
             'content' => $_POST['subjectFormContent'],
         ]);
     }
 }
 
-$query = $database->prepare('SELECT * FROM `subject` WHERE id = :id');
+$query = $database->prepare('SELECT * FROM `articles` WHERE `subjectId` = :id');
 $query->execute([
     'id' => $_GET['id'],
 ]);

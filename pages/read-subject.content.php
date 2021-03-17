@@ -2,12 +2,13 @@
 /** @var PDO $database */
 $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
-$query = $database->prepare('SELECT * FROM `subject` WHERE id = :id');
+$query = $database->prepare('SELECT * FROM `subject` WHERE `subjectId` = :id');
 $query->execute([
     'id' => $_GET['id'],
 ]);
 
 $row = $query->fetch();
+var_dump($row);
 ?>
 
 <div class="container my-5">
