@@ -7,9 +7,8 @@ if (isset($_POST['subjectForm'])) {
         /** @var PDO $database */
         $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
-        $query = $database->prepare('INSERT INTO `subject` (`subjectId`, `subjectName`, `subjectContent`) VALUES(:id, :title, :content)');
+        $query = $database->prepare('INSERT INTO `subject` (`subjectName`, `subjectContent`) VALUES(:title, :content)');
         $res = $query->execute([
-            'id' => $_POST['subjectId'],
             'title' => $_POST['subjectFormTitle'],
             'content' => $_POST['subjectFormContent'],
         ]);
@@ -22,7 +21,7 @@ if (isset($_POST['subjectForm'])) {
 <div class="container my-5">
     <div class="row">
         <div class="col">
-            <form action="/?page=create-subject" method="post">
+            <form action="index.php/?page=create-subject" method="post">
                 <div class="mb-3">
                     <label for="subjectFormTitle" class="form-label">Titre du sujet</label>
                     <input type="text" class="form-control" id="subjectFormTitle" name="subjectFormTitle">

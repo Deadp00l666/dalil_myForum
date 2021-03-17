@@ -11,7 +11,7 @@ $query->execute();
     <div class="row">
         <div class="col">
 
-            <a href="/?page=create-subject" class="btn btn-success float-end">Créer un nouveau Topic</a>
+            <a href="index.php/?page=create-subject" class="btn btn-success float-end">Créer un nouveau Topic</a>
 
             <table class="table">
                 <thead>
@@ -28,8 +28,8 @@ $query->execute();
                         <th scope="row"><?php echo $row['subjectId']; ?></th>
                         <td><?php echo $row['subjectName']; ?></td>
                         <td>
-                            <a href="index.php/?page=update-subject&id=<?php echo $row['id']; ?>" class="btn btn-warning">Modifier</a>
-                            <a href="index.php/?page=delete-subject&id=<?php echo $row['id']; ?>" class="btn btn-danger">Effacer</a>
+                            <a href="index.php/?page=update-subject&id=<?php echo $row['subjectId']; ?>" class="btn btn-warning">Modifier</a>
+                            <a href="index.php/?page=delete-subject&id=<?php echo $row['subjectId']; ?>" class="btn btn-danger">Effacer</a>
                         </td>
                     </tr>
 
