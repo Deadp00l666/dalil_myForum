@@ -1,31 +1,10 @@
 <?php
+
 /** @var PDO $database */
 $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
-$query = $database->prepare('SELECT * FROM `subject` WHERE `subjectId` = :id');
-$query->execute([
-    'id' => $_GET['id'],
-]);
-
-$row = $query->fetch();
-?>
-
-<div class="container my-5">
-    <div class="row">
-        <div class="col">
-            <h1><?php echo $row['subjectName']; ?></h1>
-            <div><?php echo nl2br($row['subjectContent']); ?></div>
-        </div>
-    </div>
-</div>
-
-
-<?php
-
-$query = $database->prepare('SELECT * FROM `messagechat` WHERE `subid` =' . $_GET['subid']);
-$query->execute([
-  'subid' => $_GET['subid'],
-]);
+$query = $database->prepare('SELECT * FROM `messagechat`');
+$query->execute();
 ?>
 
 <div class="container my-5">
@@ -56,15 +35,14 @@ $query->execute([
 
 if (isset($_POST['messageForm'])) {
     if (isset($_POST['messageFormTitle']) && !empty($_POST['messageFormTitle']) &&
-        isset($_POST['messageFormContent']) && !empty($_POST['messageFormContent']) && isset($_GET['subid']) && !empty($_GET['subid']) ) {
+        isset($_POST['messageFormContent']) && !empty($_POST['messageFormContent'])) {
 
-        $query = $database->prepare('INSERT INTO `messagechat` (`messageUser`, `messageContent`, `subid`) VALUES (:title, :content, :subid)');
+        $query = $database->prepare('INSERT INTO `messagechat` (`messageUser`, `messageContent`) VALUES (:title, :content)');
         $res = $query->execute([
             'title' => $_POST['messageFormTitle'],
             'content' => $_POST['messageFormContent'],
-            'subid' => $_GET['subid'],
         ]);
-        header("Refresh:0");
+        header("Location:index.php/?page=read-message");
     }
 
 }
@@ -74,7 +52,7 @@ if (isset($_POST['messageForm'])) {
 <div class="container my-5">
     <div class="row">
         <div class="col">
-            <form action="index.php/?page=read-subject&id=<?php echo $_GET['subid']; ?>&subid=<?php echo $_GET['subid']; ?>" method="post">
+            <form action="index.php/?page=read-message" method="post">
                 <div class="mb-3">
                     <label for="messageFormTitle" class="form-label">Pseudo</label>
                     <input type="text" class="form-control" id="messageFormTitle" name="messageFormTitle">

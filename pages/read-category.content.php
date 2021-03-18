@@ -7,7 +7,6 @@ $query = $database->prepare('SELECT * FROM `subject` WHERE `catid` =' . $_GET['c
 $query->execute([
     'catid' => $_GET['catid'],
 ]);
-var_dump($query);
 ?>
 
 <div class="container my-5">
@@ -26,7 +25,7 @@ var_dump($query);
 
                     <tr>
                         <th scope="row"><?php echo $row['subjectId']; ?></th>
-                        <td><a href="index.php/?page=read-subject&id=<?php echo $row['subjectId']; ?>"><?php echo $row['subjectName']; ?></a></td>
+                        <td><a href="index.php/?page=read-subject&id=<?php echo $row['subjectId']; ?>&subid=<?php echo $row['subjectId']; ?>"><?php echo $row['subjectName']; ?></a></td>
                     </tr>
 
                 <?php } ?>
