@@ -2,7 +2,7 @@
 /** @var PDO $database */
 $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
-$query = $database->prepare('DELETE FROM `subject` WHERE id = :id');
+$query = $database->prepare('DELETE FROM `subject` WHERE `subjectId` = :id');
 $query->execute([
     'id' => $_GET['id'],
 ]);

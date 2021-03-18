@@ -4,7 +4,9 @@
 $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
 $query = $database->prepare('SELECT * FROM `categories`');
-$query->execute();
+$query->execute([
+    
+]);
 ?>
 
 <?php while ($row = $query->fetch()) { ?>
@@ -12,7 +14,7 @@ $query->execute();
         <div class="container my-5">
             <div class="row">
                 <div class="col">
-                    <a href="/?page=read-category&id=<?php echo $row['id']; ?>"><h2><?php echo $row['title']; ?></h2></a>
+                    <a href="index.php/?page=read-category&catid=<?php echo $row['id']; ?>"><h2><?php echo $row['title']; ?></h2></a>
                 </div>
             </div>
         </div>
