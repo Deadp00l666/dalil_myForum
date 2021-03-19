@@ -74,7 +74,7 @@ if (isset($_POST['messageForm'])) {
 <div class="container my-5">
     <div class="row">
         <div class="col">
-            <form action="index.php/?page=read-subject&id=<?php echo $_GET['subid']; ?>&subid=<?php echo $_GET['subid']; ?>" method="post">
+            <form action="/?page=read-subject&id=<?php echo $_GET['subid']; ?>&subid=<?php echo $_GET['subid']; ?>" method="post">
                 <div class="mb-3">
                     <label for="messageFormTitle" class="form-label">Pseudo</label>
                     <input type="text" class="form-control" id="messageFormTitle" name="messageFormTitle">

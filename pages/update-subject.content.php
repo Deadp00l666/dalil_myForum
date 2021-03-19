@@ -28,7 +28,7 @@ $subject = $query->fetch();
 <div class="container my-5">
     <div class="row">
         <div class="col">
-            <form action="index.php/?page=update-subject&id=<?php echo $subject['id']; ?>" method="post">
+            <form action="/?page=update-subject&id=<?php echo $subject['id']; ?>" method="post">
                 <div class="mb-3">
                     <label for="subjectFormTitle" class="form-label">Titre</label>
                     <input type="text" class="form-control" id="subjectFormTitle" name="subjectFormTitle" value="<?php echo $subject['title']; ?>">

@@ -2,10 +2,17 @@
 /** @var PDO $database */
 $database = require_once dirname(__FILE__) . '/../utils/database.utils.php';
 
-$query = $database->prepare('DELETE FROM `subject` WHERE `subjectId` = :id');
-$query->execute([
+$deleteSubject = $database->prepare('DELETE FROM `subject` WHERE `subjectId` = :id');
+$deleteSubject->execute([
     'id' => $_GET['id'],
 ]);
+
+$deleteComment = $database->prepare('DELETE FROM `messagechat` WHERE `subid` = :id');
+$deleteComment->execute([
+    'id' => $_GET['id'],  
+]);
+
+
 ?>
 
 <div class="container my-5">
