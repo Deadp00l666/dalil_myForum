@@ -16,6 +16,3 @@ session_start();
   } else {
       require_once dirname(__FILE__) . '/pages/home.content.php';
 }
-
-
-require_once dirname(__FILE__) . '/includes/bottom.inc.php';

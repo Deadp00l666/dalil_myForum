@@ -12,6 +12,8 @@ $deleteSubject->execute([
     'catid' => $_GET['catid'],
 ]);
 
+header("Location: ./?page=admin");
+
 ?>
 
 <div class="container my-5">
